@@ -163,8 +163,28 @@ namespace Snake
         private void generateFood()
         {
             Random random = new Random();
-            this.mFood = new Point(random.Next(0, this.mainFormMap.Width / Point.WIDTH),
-                random.Next(0, this.mainFormMap.Height / Point.HEIGHT));
+            Boolean isSnakePosition = false;
+            int foodX;
+            int foodY;
+
+            do
+            {
+                isSnakePosition = false;
+                foodX = random.Next(0, this.mainFormMap.Width / Point.WIDTH);
+                foodY = random.Next(0, this.mainFormMap.Height / Point.HEIGHT);
+
+                for(int i=0; i < this.mSnake.getLength(); i++)
+                {
+                    if(this.mSnake.getPartX(i).Equals(foodX) &&
+                        this.mSnake.getPartY(i).Equals(foodY))
+                    {
+                        isSnakePosition = true;
+                    }
+                }
+            }
+            while (isSnakePosition);
+
+            this.mFood = new Point(foodX, foodY);
         }
 
         private void MainForm_KeyDown(object sender, PreviewKeyDownEventArgs e)

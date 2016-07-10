@@ -1,6 +1,6 @@
-﻿namespace Snake
+namespace Snake
 {
-    partial class MainForm
+    public partial class MainForm
     {
         /// <summary>
         /// Required designer variable.

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-    public enum DIRECTION
+    public enum DIRECTION : int
     {
         DOWN,
         LEFT,
@@ -15,7 +15,7 @@ namespace Snake
         NONE
     }
 
-    class Snake
+    public class Snake
     {
         public const int START_POINT_X = 10;
         public const int START_POINT_Y = 5;
